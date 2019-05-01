@@ -1,0 +1,138 @@
+/* --------------------------------------------------
+
+stylesheet for a basic mobile mockup 
+
+author: Akash Mohan
+github: https://github.com/akashmohan
+
+-----------------------------------------------------*/
+
+/* the container for the site */
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	box-sizing: border-box;
+	padding: 50px;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* the text part */
+.text {
+	margin: 30px;
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius: 10px 10px 0 0;
+	max-width: 40%;
+	animation-name: fadedSlideText;
+	animation-duration: 1.5s;
+}
+
+.title {
+	margin: 0;
+	font-weight: 600;
+	font-size: 30px;
+}
+
+.description {
+	line-height: 30px;
+	font-weight: 200;
+}
+
+.link a{
+	color: #000;
+}
+
+/* The Mobile */
+.mobile {
+	background: #cfcfcf;
+	min-height: 70vh;
+	width: 18%;
+	min-width: 250px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 20px;
+	box-shadow: -10px 10px 0px #ccc;
+	transform: perspective(3000px) rotateY(20deg);	
+	animation-name: fadedSlideMobile;
+	animation-duration: 1.5s;
+}
+
+.top, .bottom {
+	display: flex;
+	background: #fafafa;
+	height: 40px;
+	border-radius: 20px;
+	align-items: center;
+}
+
+.top {
+	border-radius: 20px 20px 0 0;
+}
+
+.bottom {
+	border-radius: 0 0 20px 20px;
+}
+
+.screen {
+	flex-grow: 1;	
+}
+
+.camera {
+	background: rgba(0, 0, 0, .1);
+	border-radius: 8px;
+	width: 15px;
+	height: 15px;
+	margin-left: 20px;
+}
+
+.highlight {
+	background: #e6e6e6;
+}
+
+/* Basic Intro Animations */
+
+@keyframes fadedSlideText {
+	from {
+		transform: translate(-20%, -20%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fadedSlideMobile {
+	from {
+		transform: translate(-20%, -20%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate(0) perspective(3000px) rotateY(20deg);
+		opacity: 1;
+	}
+}
+
+/* Simple Media Queries For Optimizing View For Small Devices */
+
+@media only screen and ( max-width: 768px ) {
+	.wrapper {
+		flex-direction: column;
+		padding-top: 0: 
+	}
+	.text {
+		display: flex;
+		flex-direction: column;
+		max-width: 70%;
+	}
+}
+
+@media only screen and ( max-width: 480px ) {
+	.text {
+		max-width: 100%;
+	}
+}
